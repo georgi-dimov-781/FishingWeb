@@ -1,0 +1,75 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.home {
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: $white;
+    padding: $spacing-xl 0;
+    text-align: center;
+
+    h1 {
+      font-size: $font-size-xl * 1.5;
+      margin-bottom: $spacing-md;
+      color: $white;
+    }
+
+    p {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-lg;
+      color: $white;
+    }
+
+    .cta-button {
+      @include button($white, $primary-color);
+      font-size: $font-size-lg;
+      padding: $spacing-sm $spacing-xl;
+    }
+  }
+
+  .featured-locations {
+    padding: $spacing-xl 0;
+
+    h2 {
+      text-align: center;
+      margin-bottom: $spacing-lg;
+    }
+
+    .location-grid {
+      @include container;
+      @include grid(3, $spacing-md);
+
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .location-card {
+        @include card;
+        @include fade-in;
+
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: $border-radius-sm;
+          margin-bottom: $spacing-sm;
+        }
+
+        h3 {
+          font-size: $font-size-lg;
+          margin-bottom: $spacing-xs;
+        }
+
+        p {
+          color: lighten($text-color, 20%);
+        }
+      }
+    }
+  }
+} 

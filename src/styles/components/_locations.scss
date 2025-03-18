@@ -1,0 +1,157 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.locations {
+  padding: $spacing-xl 0;
+
+  .locations-header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h1 {
+      @include heading-1;
+      @include gradient-text($primary-color, $secondary-color);
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: $gray-600;
+    }
+  }
+
+  .locations-container {
+    @include container;
+    @include grid(2, $spacing-xl);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    .locations-map {
+      height: 600px;
+      border-radius: $border-radius-lg;
+      overflow: hidden;
+      box-shadow: $shadow-md;
+
+      @include mobile {
+        height: 400px;
+      }
+    }
+
+    .locations-list {
+      @include flex(column, flex-start, stretch, $spacing-md);
+      max-height: 600px;
+      overflow-y: auto;
+      padding-right: $spacing-sm;
+
+      @include custom-scrollbar;
+
+      .location-card {
+        @include card;
+        @include fade-in;
+        cursor: pointer;
+        transition: transform $transition-base, box-shadow $transition-base;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: $shadow-lg;
+        }
+
+        &.active {
+          border: 2px solid $primary-color;
+        }
+
+        .location-header {
+          @include flex(row, space-between, center);
+          margin-bottom: $spacing-sm;
+
+          h3 {
+            @include heading-3;
+            margin: 0;
+          }
+
+          .distance {
+            font-size: $font-size-sm;
+            color: $gray-500;
+          }
+        }
+
+        .location-details {
+          @include flex(column, flex-start, stretch, $spacing-xs);
+
+          .detail-item {
+            @include flex(row, flex-start, center, $spacing-sm);
+            color: $gray-600;
+            font-size: $font-size-sm;
+
+            i {
+              color: $primary-color;
+            }
+          }
+        }
+
+        .location-tags {
+          @include flex(row, flex-start, center, $spacing-xs);
+          margin-top: $spacing-sm;
+          flex-wrap: wrap;
+
+          .tag {
+            background-color: $gray-100;
+            color: $gray-600;
+            padding: $spacing-xs $spacing-sm;
+            border-radius: $border-radius-full;
+            font-size: $font-size-sm;
+          }
+        }
+      }
+    }
+  }
+
+  .location-filters {
+    @include container;
+    margin-bottom: $spacing-xl;
+    @include flex(row, space-between, center);
+    flex-wrap: wrap;
+    gap: $spacing-md;
+
+    .filter-group {
+      @include flex(row, flex-start, center, $spacing-sm);
+
+      label {
+        font-weight: 500;
+        color: $gray-700;
+      }
+
+      select {
+        @include form-input;
+        width: auto;
+        min-width: 150px;
+      }
+    }
+
+    .search-input {
+      @include form-input;
+      width: 300px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+
+      .filter-group {
+        width: 100%;
+        justify-content: space-between;
+
+        select {
+          flex: 1;
+        }
+      }
+
+      .search-input {
+        width: 100%;
+      }
+    }
+  }
+} 

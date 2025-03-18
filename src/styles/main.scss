@@ -1,0 +1,23 @@
+// Base styles
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/base';
+
+// Components
+@use 'components/header';
+@use 'components/footer';
+@use 'components/equipment';
+@use 'components/locations';
+@use 'components/techniques';
+@use 'components/contact';
+@use 'components/community';
+
+// Pages
+@use 'pages/home';
+
+// Import your component styles here as you create them
+// Example:
+// @use 'components/button';
+// @use 'components/card';
+// @use 'components/form';
+// etc. 

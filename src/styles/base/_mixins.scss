@@ -1,0 +1,274 @@
+@use 'variables' as *;
+
+// Flexbox mixins
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Grid mixins
+@mixin grid($columns: 1, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Media queries
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+// Typography mixins
+@mixin heading($size: $font-size-xl) {
+  font-size: $size;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+}
+
+@mixin text($size: $font-size-base) {
+  font-size: $size;
+  line-height: 1.6;
+}
+
+// Card mixins
+@mixin card {
+  background: $white;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-sm;
+  padding: $spacing-md;
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}
+
+// Button mixins
+@mixin button($bg-color: $primary-color, $text-color: $white) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-sm;
+  border: none;
+  cursor: pointer;
+  transition: opacity $transition-base;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// Container mixins
+@mixin container {
+  max-width: $desktop;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// Image mixins
+@mixin responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Animation mixins
+@mixin fade-in {
+  animation: fadeIn $transition-slow ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Typography mixins
+@mixin heading-1 {
+  font-size: $font-size-4xl;
+  line-height: $line-height-sm;
+  font-weight: 700;
+}
+
+@mixin heading-2 {
+  font-size: $font-size-3xl;
+  line-height: $line-height-sm;
+  font-weight: 700;
+}
+
+@mixin heading-3 {
+  font-size: $font-size-2xl;
+  line-height: $line-height-sm;
+  font-weight: 600;
+}
+
+@mixin body-text {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+@mixin small-text {
+  font-size: $font-size-sm;
+  line-height: $line-height-base;
+}
+
+// Form mixins
+@mixin form-input {
+  width: 100%;
+  padding: $spacing-sm;
+  border: 1px solid $gray-300;
+  border-radius: $border-radius-md;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  transition: $transition-base;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+  }
+
+  &::placeholder {
+    color: $gray-400;
+  }
+
+  &:disabled {
+    background-color: $gray-100;
+    cursor: not-allowed;
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Hide scrollbar
+@mixin hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width: 16, $height: 9) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Hover media query
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin slide-up {
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  animation: slideUp 0.3s ease-out;
+}
+
+// Glass effect
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+// Gradient text
+@mixin gradient-text($start-color: $primary-color, $end-color: $secondary-color) {
+  background: linear-gradient(to right, $start-color, $end-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// Responsive font size
+@mixin responsive-font($min-size: $font-size-base, $max-size: $font-size-xl) {
+  font-size: clamp($min-size, calc(1rem + 1vw), $max-size);
+}
+
+// Custom scrollbar
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $gray-100;
+    border-radius: $border-radius-full;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $gray-300;
+    border-radius: $border-radius-full;
+    transition: $transition-base;
+
+    &:hover {
+      background: $gray-400;
+    }
+  }
+} 

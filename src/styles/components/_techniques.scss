@@ -1,0 +1,184 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.techniques {
+  padding: $spacing-xl 0;
+
+  .techniques-header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h1 {
+      @include heading-1;
+      @include gradient-text($primary-color, $secondary-color);
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: $gray-600;
+    }
+  }
+
+  .techniques-grid {
+    @include container;
+    @include grid(2, $spacing-xl);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+
+    .technique-card {
+      @include card;
+      @include fade-in;
+      @include flex(row);
+      gap: $spacing-md;
+      transition: transform $transition-base;
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+
+      .technique-image {
+        width: 200px;
+        height: 200px;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform $transition-base;
+        }
+
+        &:hover img {
+          transform: scale(1.1);
+        }
+
+        @include mobile {
+          width: 100%;
+          height: 250px;
+        }
+      }
+
+      .technique-content {
+        flex: 1;
+        @include flex(column);
+
+        h3 {
+          @include heading-3;
+          margin-bottom: $spacing-sm;
+        }
+
+        p {
+          color: $gray-600;
+          margin-bottom: $spacing-md;
+          flex: 1;
+        }
+
+        .technique-details {
+          @include flex(column, flex-start, stretch, $spacing-sm);
+
+          .difficulty {
+            @include flex(row, flex-start, center, $spacing-xs);
+
+            .difficulty-label {
+              font-weight: 500;
+              color: $gray-700;
+            }
+
+            .difficulty-stars {
+              @include flex(row, flex-start, center, 2px);
+
+              i {
+                color: $warning-color;
+                font-size: $font-size-sm;
+              }
+            }
+          }
+
+          .best-for {
+            @include flex(row, flex-start, center, $spacing-xs);
+            flex-wrap: wrap;
+
+            .best-for-label {
+              font-weight: 500;
+              color: $gray-700;
+            }
+
+            .fish-tags {
+              @include flex(row, flex-start, center, $spacing-xs);
+              flex-wrap: wrap;
+
+              .fish-tag {
+                background-color: $gray-100;
+                color: $gray-600;
+                padding: $spacing-xs $spacing-sm;
+                border-radius: $border-radius-full;
+                font-size: $font-size-sm;
+              }
+            }
+          }
+        }
+      }
+
+      @include mobile {
+        flex-direction: column;
+
+        .technique-image {
+          width: 100%;
+          height: 250px;
+        }
+      }
+    }
+  }
+
+  .technique-filters {
+    @include container;
+    margin-bottom: $spacing-xl;
+    @include flex(row, space-between, center);
+    flex-wrap: wrap;
+    gap: $spacing-md;
+
+    .filter-group {
+      @include flex(row, flex-start, center, $spacing-sm);
+
+      label {
+        font-weight: 500;
+        color: $gray-700;
+      }
+
+      select {
+        @include form-input;
+        width: auto;
+        min-width: 150px;
+      }
+    }
+
+    .search-input {
+      @include form-input;
+      width: 300px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+
+      .filter-group {
+        width: 100%;
+        justify-content: space-between;
+
+        select {
+          flex: 1;
+        }
+      }
+
+      .search-input {
+        width: 100%;
+      }
+    }
+  }
+} 

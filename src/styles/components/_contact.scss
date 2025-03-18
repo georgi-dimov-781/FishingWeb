@@ -1,0 +1,166 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.contact {
+  padding: $spacing-xl 0;
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h1 {
+      @include heading-1;
+      @include gradient-text($primary-color, $secondary-color);
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: $gray-600;
+    }
+  }
+
+  .contact-container {
+    @include container;
+    @include grid(2, $spacing-xl);
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+      @include card;
+      @include flex(column, flex-start, stretch, $spacing-lg);
+
+      h2 {
+        @include heading-2;
+        margin-bottom: $spacing-md;
+      }
+
+      .info-item {
+        @include flex(row, flex-start, flex-start, $spacing-md);
+
+        .icon {
+          width: 40px;
+          height: 40px;
+          background-color: lighten($primary-color, 45%);
+          color: $primary-color;
+          border-radius: $border-radius-full;
+          @include flex-center;
+          flex-shrink: 0;
+
+          i {
+            font-size: $font-size-lg;
+          }
+        }
+
+        .content {
+          h3 {
+            @include heading-3;
+            margin-bottom: $spacing-xs;
+          }
+
+          p {
+            color: $gray-600;
+            margin: 0;
+          }
+        }
+      }
+
+      .social-links {
+        @include flex(row, flex-start, center, $spacing-md);
+        margin-top: auto;
+
+        a {
+          width: 40px;
+          height: 40px;
+          background-color: $gray-100;
+          color: $gray-600;
+          border-radius: $border-radius-full;
+          @include flex-center;
+          transition: all $transition-base;
+
+          &:hover {
+            background-color: $primary-color;
+            color: $white;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+
+    .contact-form {
+      @include card;
+
+      h2 {
+        @include heading-2;
+        margin-bottom: $spacing-lg;
+      }
+
+      .form-group {
+        margin-bottom: $spacing-md;
+
+        label {
+          display: block;
+          font-weight: 500;
+          color: $gray-700;
+          margin-bottom: $spacing-xs;
+        }
+
+        input, textarea {
+          @include form-input;
+          width: 100%;
+
+          &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+          }
+        }
+
+        textarea {
+          min-height: 150px;
+          resize: vertical;
+        }
+
+        .error-message {
+          color: $error-color;
+          font-size: $font-size-sm;
+          margin-top: $spacing-xs;
+        }
+      }
+
+      .submit-button {
+        @include button($primary-color, $white);
+        width: 100%;
+        padding: $spacing-sm;
+        font-size: $font-size-lg;
+        font-weight: 500;
+        transition: all $transition-base;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+          transform: translateY(-2px);
+        }
+
+        &:disabled {
+          background-color: $gray-400;
+          cursor: not-allowed;
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .map-section {
+    margin-top: $spacing-xl;
+    height: 400px;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+
+    @include mobile {
+      height: 300px;
+    }
+  }
+} 
