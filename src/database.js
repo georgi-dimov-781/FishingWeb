@@ -1,3 +1,20 @@
+// Import all images
+import zabConsulting1 from './assets/zab-consulting-QTXAXnJA3oY-unsplash.jpg';
+import zabConsulting2 from './assets/zab-consulting-b_uZ6-Wrqvs-unsplash.jpg';
+import calinStan from './assets/calin-stan-jW2zQnopO4s-unsplash.jpg';
+import federicoGiampieri from './assets/federico-giampieri-R0lftflMYPw-unsplash.jpg';
+import wynandVanPoortvliet from './assets/wynand-van-poortvliet-86gwJv3rd-M-unsplash.jpg';
+import garyTresize from './assets/gary-tresize-fffsh5XnyTI-unsplash.jpg';
+import drewFarwell from './assets/drew-farwell-a9JsPbN-R_A-unsplash.jpg';
+import jakobOwens1 from './assets/jakob-owens-VEobb3p5yOI-unsplash.jpg';
+import johnCameron from './assets/john-cameron-ShLDezSsZJk-unsplash.jpg';
+import stephenMomot from './assets/stephen-momot-UivGzIDhVyw-unsplash.jpg';
+import lauraKessler from './assets/laura-kessler-MJbz1VIjGXs-unsplash.jpg';
+import jakobOwens2 from './assets/jakob-owens-GoRsrsoxoL8-unsplash.jpg';
+import rMacWheeler from './assets/r-mac-wheeler-YZ_OgitihfM-unsplash.jpg';
+import alanBishop from './assets/alan-bishop-gjshuj_QB2s-unsplash.jpg';
+import arCs67v from './assets/ar-cS67vV_1wBw-unsplash.jpg';
+
 const database = {
   communityPosts: [
     {
@@ -7,7 +24,7 @@ const database = {
       content: "Had an incredible day fishing at Crystal Lake. The early morning bite was fantastic! Caught three beautiful rainbow trout using my new spinner set. The weather was perfect and the water conditions were ideal. If you're planning to visit, make sure to get there early!",
       date: "2024-03-18",
       likes: 24,
-      imageUrl: "/src/assets/zab-consulting-QTXAXnJA3oY-unsplash.jpg",
+      imageUrl: zabConsulting1,
       comments: [
         {
           user: "AnglePro",
@@ -28,7 +45,7 @@ const database = {
       content: "Finally tried fly fishing at Blue River. The community here is so helpful! Special thanks to @FlyFishPro for the tips. Still learning the casting technique but managed to catch my first trout! Can't wait to go back and practice more.",
       date: "2024-03-17",
       likes: 15,
-      imageUrl: "/src/assets/zab-consulting-b_uZ6-Wrqvs-unsplash.jpg",
+      imageUrl: zabConsulting2,
       comments: [
         {
           user: "FlyFishPro",
@@ -44,7 +61,7 @@ const database = {
       content: "Just got back from an amazing deep-sea fishing trip! Caught several halibut and even a small shark. The weather was perfect and the crew was fantastic. Highly recommend trying out deep sea fishing if you haven't yet!",
       date: "2024-03-16",
       likes: 42,
-      imageUrl: "/src/assets/calin-stan-jW2zQnopO4s-unsplash.jpg",
+      imageUrl: calinStan,
       comments: [
         {
           user: "OceanExplorer",
@@ -58,7 +75,7 @@ const database = {
     {
       id: "loc1",
       name: "Crystal Lake",
-      imageUrl: "/src/assets/federico-giampieri-R0lftflMYPw-unsplash.jpg",
+      imageUrl: federicoGiampieri,
       coordinates: { lat: 45.3052, lng: -121.7542 },
       description: "Mountain lake with excellent trout fishing and stunning views. Perfect for both beginners and experienced anglers. The lake is stocked regularly and offers great shore fishing opportunities.",
       fishSpecies: ["Rainbow Trout", "Brown Trout", "Bass", "Kokanee Salmon"],
@@ -70,7 +87,7 @@ const database = {
     {
       id: "loc2",
       name: "Blue River",
-      imageUrl: "/src/assets/wynand-van-poortvliet-86gwJv3rd-M-unsplash.jpg",
+      imageUrl: wynandVanPoortvliet,
       coordinates: { lat: 44.2361, lng: -122.1542 },
       description: "Scenic river perfect for fly fishing, with multiple access points and varied water conditions. Known for its wild trout population and beautiful surroundings.",
       fishSpecies: ["Salmon", "Steelhead", "Brook Trout", "Cutthroat Trout"],
@@ -82,7 +99,7 @@ const database = {
     {
       id: "loc3",
       name: "Coastal Bay",
-      imageUrl: "/src/assets/gary-tresize-fffsh5XnyTI-unsplash.jpg",
+      imageUrl: garyTresize,
       coordinates: { lat: 45.5152, lng: -122.6784 },
       description: "Saltwater bay offering excellent opportunities for salmon and halibut fishing. Popular charter destination with consistent action throughout the season.",
       fishSpecies: ["Chinook Salmon", "Pacific Halibut", "Rockfish", "Lingcod"],
@@ -98,7 +115,7 @@ const database = {
         id: "rod1",
         name: "Beginner Spinning Rod",
         category: "Rods",
-        imageUrl: "/src/assets/drew-farwell-a9JsPbN-R_A-unsplash.jpg",
+        imageUrl: drewFarwell,
         description: "Perfect for beginners, this versatile spinning rod is easy to use and great for various fishing techniques. Features comfortable grip and sensitive tip.",
         difficulty: "Beginner",
         price: "$49.99",
@@ -108,7 +125,7 @@ const database = {
         id: "rod2",
         name: "Pro Fly Rod",
         category: "Rods",
-        imageUrl: "/src/assets/jakob-owens-VEobb3p5yOI-unsplash.jpg",
+        imageUrl: jakobOwens1,
         description: "High-performance fly rod designed for precision casting and delicate presentations. Perfect for experienced anglers looking for top-quality gear.",
         difficulty: "Advanced",
         price: "$199.99",
@@ -118,7 +135,7 @@ const database = {
         id: "rod3",
         name: "Heavy Action Surf Rod",
         category: "Rods",
-        imageUrl: "/src/assets/john-cameron-ShLDezSsZJk-unsplash.jpg",
+        imageUrl: johnCameron,
         description: "Powerful rod designed for surf fishing and handling large saltwater species. Built to withstand harsh conditions.",
         difficulty: "Intermediate",
         price: "$129.99",
@@ -130,7 +147,7 @@ const database = {
         id: "reel1",
         name: "Standard Spinning Reel",
         category: "Reels",
-        imageUrl: "/src/assets/stephen-momot-UivGzIDhVyw-unsplash.jpg",
+        imageUrl: stephenMomot,
         description: "Reliable and smooth operation. Perfect for all-around freshwater fishing. Features quality drag system and anti-reverse.",
         difficulty: "Beginner",
         price: "$39.99",
@@ -140,7 +157,7 @@ const database = {
         id: "reel2",
         name: "Premium Fly Reel",
         category: "Reels",
-        imageUrl: "/src/assets/laura-kessler-MJbz1VIjGXs-unsplash.jpg",
+        imageUrl: lauraKessler,
         description: "Balanced fly reel with sealed drag system. Ideal for trout and salmon fishing in all conditions.",
         difficulty: "Advanced",
         price: "$149.99",
@@ -152,7 +169,7 @@ const database = {
         id: "lure1",
         name: "Colorful Spinners Set",
         category: "Lures",
-        imageUrl: "/src/assets/jakob-owens-GoRsrsoxoL8-unsplash.jpg",
+        imageUrl: jakobOwens2,
         description: "Variety pack of spinning lures in various colors and sizes. Perfect for targeting multiple species in different conditions.",
         difficulty: "Beginner",
         price: "$19.99",
@@ -162,7 +179,7 @@ const database = {
         id: "lure2",
         name: "Pro Fly Selection",
         category: "Lures",
-        imageUrl: "/src/assets/r-mac-wheeler-YZ_OgitihfM-unsplash.jpg",
+        imageUrl: rMacWheeler,
         description: "Comprehensive selection of dry flies, nymphs, and streamers. Includes popular patterns for all seasons.",
         difficulty: "Advanced",
         price: "$39.99",
@@ -174,7 +191,7 @@ const database = {
     {
       id: "tech1",
       name: "Basic Casting",
-      imageUrl: "/src/assets/alan-bishop-gjshuj_QB2s-unsplash.jpg",
+      imageUrl: alanBishop,
       difficulty: "Beginner",
       description: "Learn the fundamentals of casting with a spinning rod. Essential skill for all anglers that will help you present your lure effectively.",
       steps: [
@@ -194,7 +211,7 @@ const database = {
     {
       id: "tech2",
       name: "Fly Casting",
-      imageUrl: "/src/assets/ar-cS67vV_1wBw-unsplash.jpg",
+      imageUrl: arCs67v,
       difficulty: "Advanced",
       description: "Master the art of fly casting. This technique requires practice but offers the most delicate and precise lure presentation.",
       steps: [
@@ -214,7 +231,7 @@ const database = {
     {
       id: "tech3",
       name: "Bottom Fishing",
-      imageUrl: "/src/assets/wynand-van-poortvliet-86gwJv3rd-M-unsplash.jpg",
+      imageUrl: wynandVanPoortvliet,
       difficulty: "Intermediate",
       description: "Effective technique for catching fish that feed near the bottom. Perfect for targeting larger species.",
       steps: [
@@ -239,7 +256,7 @@ const database = {
       date: "2024-04-15",
       location: "Crystal Lake",
       description: "Annual spring trout fishing tournament. Prizes for largest catch and most fish caught. Registration required.",
-      imageUrl: "/src/assets/federico-giampieri-R0lftflMYPw-unsplash.jpg",
+      imageUrl: federicoGiampieri,
       registrationDeadline: "2024-04-10",
       entryFee: "$25",
       maxParticipants: 50,
@@ -251,7 +268,7 @@ const database = {
       date: "2024-05-01",
       location: "Blue River",
       description: "Learn the basics of fly fishing from expert instructors. Equipment provided for beginners.",
-      imageUrl: "/src/assets/wynand-van-poortvliet-86gwJv3rd-M-unsplash.jpg",
+      imageUrl: wynandVanPoortvliet,
       registrationDeadline: "2024-04-25",
       entryFee: "$75",
       maxParticipants: 20,
@@ -263,7 +280,7 @@ const database = {
       date: "2024-06-10",
       location: "Coastal Bay",
       description: "Family-friendly fishing event with activities for kids and beginners. Free equipment rental available.",
-      imageUrl: "/src/assets/gary-tresize-fffsh5XnyTI-unsplash.jpg",
+      imageUrl: garyTresize,
       registrationDeadline: "2024-06-05",
       entryFee: "Free",
       maxParticipants: 100,
@@ -277,7 +294,7 @@ const database = {
       author: "Mike Johnson",
       date: "2024-03-15",
       content: "Caught a massive 45-pound Chinook salmon at Coastal Bay. The fight lasted over 30 minutes!",
-      imageUrl: "/src/assets/calin-stan-jW2zQnopO4s-unsplash.jpg",
+      imageUrl: calinStan,
       location: "Coastal Bay",
       fishSpecies: "Chinook Salmon",
       weight: "45 lbs",
@@ -296,7 +313,7 @@ const database = {
       author: "Sarah Chen",
       date: "2024-03-10",
       content: "After months of practice, finally caught my first rainbow trout on a dry fly! The moment was magical.",
-      imageUrl: "/src/assets/zab-consulting-QTXAXnJA3oY-unsplash.jpg",
+      imageUrl: zabConsulting1,
       location: "Blue River",
       fishSpecies: "Rainbow Trout",
       weight: "3.5 lbs",
