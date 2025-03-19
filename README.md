@@ -13,13 +13,6 @@ A React website for fishing enthusiasts to discover spots, share experiences, an
 - 🎯 **Gear Management**
   - Comprehensive gear catalog
   - Detailed product specifications
-  - User reviews and ratings
-  - Price filtering and comparison
-
-- 👥 **User Features**
-  - User authentication and profiles
-  - Personal spot and gear collections
-  - Review and rating system
   - Community interaction
 
 ## Tech Stack
@@ -30,7 +23,6 @@ A React website for fishing enthusiasts to discover spots, share experiences, an
 - **Routing**: React Router v6
 - **HTTP Client**: Axios
 - **Type Safety**: TypeScript
-- **Code Quality**: ESLint, Prettier
 
 ## Getting Started
 
